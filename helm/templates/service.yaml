@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: Hr-Management-Systemsrv
+    service: Hr-Management-Systemsrv
+  name: Hr-Management-Systemsrv
+spec:
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+  selector:
+    app: Hr-Management-System

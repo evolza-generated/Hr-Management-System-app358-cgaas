@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Hr-Management-System
+  labels:
+    app: Hr-Management-System
+spec:
+  selector:
+    matchLabels:
+      app: Hr-Management-System
+  replicas:  1
+  template:
+    metadata:
+      labels:
+        app: Hr-Management-System
+    spec:
+      containers:
+       - name: Hr-Management-System
+         image: evolza/Hr-Management-System:latest
+         imagePullPolicy: Always
+         ports:
+          - containerPort: 8080
+            name: rest
+      imagePullSecrets:
+          - name: notavailable
